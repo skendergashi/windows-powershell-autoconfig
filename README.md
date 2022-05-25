@@ -1,5 +1,14 @@
-# windows-powershell-config
+# windows-powershell-autoconfig
 
-My Powershell and oh-my-posh configs 😎
+## What is it?
 
-Feel free to fork/copy it!
+It is a *NodeJS* Project which updates your **powershell** and **oh-my-posh** scripts. 
+
+## Why should I use it?
+
+It is very convenient if:
+- you work on more than one computer
+- your computer lost the data on the main drive
+- you bought/built a new computer
+
+**FEEL FREE TO FORK AND SET UP FOR YOURSELF**
