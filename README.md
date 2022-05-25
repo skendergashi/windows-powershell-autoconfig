@@ -11,4 +11,4 @@ It is very convenient if:
 - your computer lost the data on the main drive
 - you bought/built a new computer
 
-**FEEL FREE TO FORK AND SET UP FOR YOURSELF**
+**Feel free to fork and set up for yourself!**
