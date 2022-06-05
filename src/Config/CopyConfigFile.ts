@@ -1,4 +1,5 @@
-import { copyFile } from 'fs';
+import { copyFile, existsSync, mkdirSync } from 'fs';
+import os from 'os';
 
 /**
  * @param source the source of the file which should get copied
@@ -6,6 +7,9 @@ import { copyFile } from 'fs';
  */
 export async function CopyConfigFile(source: string, destination: string) {
     try {
+        if(!existsSync((os.homedir() + '\\Documents\\PowerShell'))) {
+            mkdirSync(os.homedir() + '\\Documents\\PowerShell');
+        }
         copyFile(source, destination, (err) => {
             console.log(err);
         });
