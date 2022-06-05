@@ -4,7 +4,8 @@
   "description": "My Powershell and oh-my-posh configs 😎",
   "main": "index.js",
   "scripts": {
-    "initialize-posh": "npx ts-node ./src/index.ts"
+    "full-initialize": "npx ts-node ./src/InitFull.ts",
+    "initialize-no-download": "npx ts-node ./src/InitPart.ts"
   },
   "repository": {
     "type": "git",

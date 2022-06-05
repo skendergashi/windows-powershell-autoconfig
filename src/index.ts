@@ -1,4 +1,9 @@
 import * as readline from 'readline';
+import { CopyConfigFile } from './Config/CopyConfigFile';
+import {
+    PWSH_PROFILE_PATH_LOCAL,
+    PWSH_PROFILE_PATH_PROJECT,
+} from './constants';
 import { DownloadFont } from './Font/DownloadFont';
 
 const rl = readline.createInterface({
@@ -8,50 +13,30 @@ const rl = readline.createInterface({
 
 /**
  * the main function
+ * @param downloadFont OPTIONAL: if download is false, it won't download the font
  */
-function main() {
+export function main(downloadFont?: boolean) {
     console.log('\n' + '#####################################' + '\n');
     console.log('Initializing the POSH-Theme...');
-    console.log('\n' + '\n' + 'At first, you need a font. ');
-    askForDownload();
+    if (downloadFont || downloadFont === undefined) {
+        startDownload();
+    }
 
-    console.log('If you wish to continue, press any key...');
-    pressAnyKey();
+    CopyConfigFile(PWSH_PROFILE_PATH_PROJECT, PWSH_PROFILE_PATH_LOCAL);
+
+    console.log('\n' + 'Config files got copied!');
+    console.log('\n' + 'Now, just restart your computer!' + '\n');
+    process.exit();
 }
-
 
 /**
  * Asks the user wether he wants to download the suggested font.
  * The suggested font can be found at /src/constants.ts => FONT_LINK
  */
-async function askForDownload() {
-    rl.resume();
-    rl.question(
-        '\n' + 'Do you want to download the suggested font? (y/n)',
-        async (answer) => {
-            if (answer === 'y') {
-                console.log('Downloading...');
-                await DownloadFont();
-                console.log(
-                    '\n' +
-                        'Now, the file explorer should be open. Install the fonts.'
-                );
-            }
-        }
+async function startDownload() {
+    console.log('Downloading...');
+    await DownloadFont();
+    console.log(
+        '\n' + 'Now, the file explorer should be open. Install the fonts.'
     );
 }
-
-/**
- * Waits for keyboard input to proceed with the process.
- */
-async function pressAnyKey() {
-    rl.resume();
-    rl.question('', async (answer) => {
-        while (answer === undefined) {
-            0; /*NOP*/
-        }
-        rl.pause();
-    });
-}
-
-main();
