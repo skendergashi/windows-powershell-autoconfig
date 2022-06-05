@@ -11,4 +11,9 @@ It is very convenient if:
 - your computer lost the data on the main drive
 - you bought/built a new computer
 
+## Make sure:
+
+- that you installed **oh-my-posh**!
+- that you installed **powershell** !**WARNING:** NOT WINDOWS POWERSHELL!
+
 **Feel free to fork and set up for yourself!**
