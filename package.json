@@ -4,8 +4,7 @@
   "description": "Powershell scripts and Update script for Powershell configs and oh-my-posh themes",
   "main": "index.js",
   "scripts": {
-    "full-initialize": "npx ts-node ./src/InitFull.ts",
-    "initialize-no-download": "npx ts-node ./src/InitPart.ts"
+    "initialize": "npx ts-node ./src/index.ts"
   },
   "repository": {
     "type": "git",
