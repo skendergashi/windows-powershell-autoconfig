@@ -14,6 +14,26 @@ It is very convenient if:
 ## Make sure:
 
 - that you installed **oh-my-posh**!
+- - Here the original docs: https://ohmyposh.dev/docs/
 - that you installed **powershell** !**WARNING:** NOT WINDOWS POWERSHELL!
+- - Here the original install guide: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell
 
-**Feel free to fork and set up for yourself!**
+## How can I set it up for myself?
+
+### 1. Run the Code
+
+Follow these steps:
+
+- clone the repo
+- type in `npm i` to install all dependencies
+- type in `npm run initialize` to initialize your shell config
+
+Afterwards, it will copy the example config, which is my own pwsh-config. You can stick to it, but make sure to either get **Neofetch** or remove it from the config.
+Here the *scoop* command to install neofetch: `scoop install neofetch`
+
+### 2. Future setup
+
+**Fork it!** I am working on a *feature* to check the current repo for changes. If the **config-file** changes, your config will be updated!
+
+
+**Feel free to contribute!**
