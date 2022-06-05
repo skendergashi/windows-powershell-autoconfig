@@ -25,11 +25,10 @@ It is very convenient if:
 Follow these steps:
 
 - clone the repo
+- change the powershell config with your preferences
 - type in `npm i` to install all dependencies
 - type in `npm run initialize` to initialize your shell config
 
-Afterwards, it will copy the example config, which is my own pwsh-config. You can stick to it, but make sure to either get **Neofetch** or remove it from the config.
-Here the *scoop* command to install neofetch: `scoop install neofetch`
 
 ### 2. Future setup
 
