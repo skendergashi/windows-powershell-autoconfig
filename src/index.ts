@@ -15,14 +15,14 @@ const rl = readline.createInterface({
  * the main function
  * @param downloadFont OPTIONAL: if download is false, it won't download the font
  */
-export function main(downloadFont?: boolean) {
+export async function main(downloadFont?: boolean) {
     console.log('\n' + '#####################################' + '\n');
     console.log('Initializing the POSH-Theme...');
     if (downloadFont || downloadFont === undefined) {
-        startDownload();
+        await startDownload();
     }
 
-    CopyConfigFile(PWSH_PROFILE_PATH_PROJECT, PWSH_PROFILE_PATH_LOCAL);
+    await CopyConfigFile(PWSH_PROFILE_PATH_PROJECT, PWSH_PROFILE_PATH_LOCAL);
 
     console.log('\n' + 'Config files got copied!');
     console.log('\n' + 'Now, just restart your computer!' + '\n');
