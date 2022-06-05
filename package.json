@@ -1,7 +1,7 @@
 {
-  "name": "windows-powershell-config",
+  "name": "windows-powershell-autoconfig",
   "version": "1.0.0",
-  "description": "My Powershell and oh-my-posh configs 😎",
+  "description": "Powershell scripts and Update script for Powershell configs and oh-my-posh themes",
   "main": "index.js",
   "scripts": {
     "full-initialize": "npx ts-node ./src/InitFull.ts",
