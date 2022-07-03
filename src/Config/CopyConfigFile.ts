@@ -7,11 +7,11 @@ import os from 'os';
  */
 export async function CopyConfigFile(source: string, destination: string) {
     try {
-        if(!existsSync((os.homedir() + '\\Documents\\PowerShell'))) {
+        if (!existsSync(os.homedir() + '\\Documents\\PowerShell')) {
             mkdirSync(os.homedir() + '\\Documents\\PowerShell');
         }
         copyFile(source, destination, (err) => {
-            console.log(err);
+            if (err) console.log(err);
         });
     } catch (e: any) {
         console.log('WARNING: Something went wrong: ' + e);

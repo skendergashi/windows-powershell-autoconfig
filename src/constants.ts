@@ -1,4 +1,5 @@
 import os from 'os';
+import * as dotenv from 'dotenv';
 
 /**
  * The path in the project of the Powershell profile config
@@ -29,3 +30,19 @@ export const ZIP_SOURCE = process.cwd() + '\\pwsh-config\\Hack.zip';
  * the path of the unpacked ZIP
  */
 export const FOLDER_OF_ZIP = process.cwd() + '\\pwsh-config\\Fonts';
+
+/**
+ * @returns the env file
+ */
+const getGitRemoteLink = (): string => {
+    dotenv.config();
+    return process.env.GIT_REMOTE_LINK || '';
+};
+
+/**
+ * The link of the custom git repo
+ * Important for forked repos
+ */
+export const GIT_REMOTE_LINK = getGitRemoteLink();
+
+export const VERSION = '1.1.0';
