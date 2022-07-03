@@ -3,7 +3,7 @@ import {
     PWSH_PROFILE_PATH_PROJECT,
     VERSION,
 } from './constants';
-import { isUpdated } from './service/CheckLastCommit';
+import { isUpdated, pull } from './service/CheckLastCommit';
 import { prompt } from 'inquirer';
 import { CopyConfigFile } from './Config/CopyConfigFile';
 
@@ -24,6 +24,7 @@ async function main() {
         return;
     }
 
+    // opens the prompt with the choices
     const answers = await prompt([
         {
             type: 'list',
@@ -33,7 +34,11 @@ async function main() {
     ]);
     const answer = answers[UPDATE_QUESTION];
     if (answer !== 'yes') return;
-    CopyConfigFile(PWSH_PROFILE_PATH_PROJECT, PWSH_PROFILE_PATH_LOCAL);
+
+    // the code which gets executed if there is
+    // an update and the user wished to proceed
+    await pull();
+    await CopyConfigFile(PWSH_PROFILE_PATH_PROJECT, PWSH_PROFILE_PATH_LOCAL);
     console.log('Your files have been updated!');
 }
 

@@ -40,9 +40,22 @@ const getGitRemoteLink = (): string => {
 };
 
 /**
+ * @returns the env file
+ */
+ const getGitBranch = (): string => {
+    dotenv.config();
+    return process.env.GIT_BRANCH || '';
+};
+
+/**
  * The link of the custom git repo
  * Important for forked repos
  */
 export const GIT_REMOTE_LINK = getGitRemoteLink();
+
+/**
+ * the current branch (edit in .env)
+ */
+export const GIT_BRANCH = getGitBranch();
 
 export const VERSION = '1.1.0';

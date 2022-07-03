@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { GIT_REMOTE_LINK } from '../constants';
+import { GIT_BRANCH, GIT_REMOTE_LINK } from '../constants';
 
 let localHash = '';
 let remoteHash = '';
@@ -9,6 +9,7 @@ let remoteHash = '';
  * @param payload output of the command
  */
 function setLocalHash(payload: string) {
+    console.log(payload);
     localHash = payload.substring(0, 40);
 }
 
@@ -17,6 +18,7 @@ function setLocalHash(payload: string) {
  * @param payload output of the command
  */
 function setRemoteHash(payload: string) {
+    console.log(payload);
     remoteHash = payload.substring(0, 40);
 }
 
@@ -38,7 +40,7 @@ async function createHashes() {
     });
 
     await exec(
-        `git ls-remote ${GIT_REMOTE_LINK} main`,
+        `git ls-remote ${GIT_REMOTE_LINK} ${GIT_BRANCH}`,
         async (error, stdout, stderr) => {
             if (error) {
                 console.error(`error: ${error.message}`);
@@ -62,5 +64,11 @@ export async function isUpdated() {
     setTimeout(() => {
         return;
     }, 1000);
-    return localHash === remoteHash;
+
+    // THIS STATEMENT DOES NOT WORK
+    return localHash === remoteHash ? false : true;
+}
+
+export async function pull() {
+    exec('git pull');
 }
