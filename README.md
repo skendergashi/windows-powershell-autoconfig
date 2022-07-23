@@ -2,7 +2,7 @@
 
 ## What is it?
 
-It is a *NodeJS* Project which updates your **powershell** and **oh-my-posh** scripts. 
+It is a *NodeJS* Project which updates your **powershell** and **oh-my-posh** scripts.
 
 ## Why should I use it?
 
