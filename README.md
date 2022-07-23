@@ -14,9 +14,9 @@ It is very convenient if:
 ## Make sure:
 
 - that you installed **oh-my-posh**!
-- - Here the original docs: https://ohmyposh.dev/docs/
+  - Here the original docs: https://ohmyposh.dev/docs/
 - that you installed **powershell** !**WARNING:** NOT WINDOWS POWERSHELL!
-- - Here the original install guide: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell
+  - Here the original install guide: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell
 
 ## How can I set it up for myself?
 
